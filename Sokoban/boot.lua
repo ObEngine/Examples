@@ -1,0 +1,1 @@
+Scene:loadFromFile("Menu.map.vili")

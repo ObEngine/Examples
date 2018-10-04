@@ -1,0 +1,13 @@
+Include (Obe);
+
+Objective:
+    LevelSprite:
+        path:"Sprites/GameObjects/Objective/Objective.png"
+        rect:Rect<SceneUnits>(0.0, 0.0, 0.1, 0.1)
+        xTransform:"Camera"
+        yTransform:"Camera"
+        layer:1.0
+        z-depth:2.0
+    Script:
+        priority:0.0
+        source:"Data/GameObjects/Objective/Objective.lua"

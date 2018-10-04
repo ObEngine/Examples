@@ -1,0 +1,24 @@
+Include (Obe);
+Flag (Map);
+Flag (Lock);
+
+Meta:
+    name:"Sokoban"
+
+View:
+    size:1.0
+    pos:Vector2<SceneUnits>(0.0, 0.0)
+    referencial:Referencial<TopLeft>()
+
+GameObjects:
+    Terrain:
+        type:"Terrain"
+        Requires:
+            toBind:
+                W:"Wall"
+                B:"Floor Barrel"
+                O:"Objective"
+                R:"Floor Robot"
+                F:"Floor"
+                D:"Objective Barrel"
+                T:"Objective Robot"
