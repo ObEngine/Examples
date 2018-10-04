@@ -1,0 +1,15 @@
+Include (Obe);
+Flag (Map);
+Flag (Lock);
+
+Meta:
+    name:"Menu"
+
+View:
+    size:1.0
+    pos:Vector2<SceneUnits>(0.0, 0.0)
+    referencial:Referencial<TopLeft>()
+
+GameObjects:
+    Game:
+        type:"Game"

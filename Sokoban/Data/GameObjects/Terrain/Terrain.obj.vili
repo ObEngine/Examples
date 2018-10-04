@@ -1,0 +1,5 @@
+Terrain:
+    Script:
+        priority:0.0
+        source:"Data/GameObjects/Terrain/Terrain.lua"
+
