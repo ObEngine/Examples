@@ -2,9 +2,9 @@ Define Flag (Settings);
     
 KeyBinding:
     game:
-        UP:"Hold:Z"
-        LEFT:"Hold:Q"
-        RIGHT:"Hold:D"
-        DOWN:"Hold:S"
+        UP:["Hold:Z","Hold:W","Hold:Up"]
+        LEFT:["Hold:Q","Hold:A","Hold:Left"]
+        RIGHT:["Hold:D","Hold:Right"]
+        DOWN:["Hold:S","Hold:Down"]
         Reset:"Pressed:R"
         Next:"Pressed:Return"
