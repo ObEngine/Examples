@@ -1,0 +1,5 @@
+Include(Obe);
+
+Mount:
+    Pong:Workspace("Pong", 1)
+    Root:Path("", 0)

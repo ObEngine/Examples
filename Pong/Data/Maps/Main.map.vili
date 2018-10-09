@@ -1,0 +1,26 @@
+Include (Obe);
+Flag (Map);
+Flag (Lock);
+
+Meta:
+    name:"Main"
+
+View:
+    size:1.0
+    pos:Vector2<SceneUnits>(0.0, 0.0)
+
+GameObjects:
+    score:
+        type:"Scoreboard"
+    ball:
+        type:"Ball"
+    leftPaddle:
+        type:"Paddle"
+        Requires:
+            pos:"Left"
+    rightPaddle:
+        type:"Paddle"
+        Requires:
+            pos:"Right"
+
+

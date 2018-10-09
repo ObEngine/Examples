@@ -1,0 +1,27 @@
+Include (Obe);
+
+Paddle:
+    Collider:
+        unit:Unit<SceneUnits>()
+        points:[
+            0    , 0
+            0.06 , 0
+            0.06 , 0.24
+            0    , 0.24
+        ]
+    LevelSprite:
+        path:"Sprites/GameObjects/Paddle/paddle.png"
+        rect:Rect<SceneUnits>(0, 0, 0.06, 0.24)
+        layer:1
+        z-depth:0
+    Script:
+        priority:0
+        source:"Data/GameObjects/Paddle/Paddle.lua"
+
+Requires:
+    UpAction:
+        name:"upAction"
+        choices:["LPaddleUp", "RPaddleUp"]
+    DownAction:
+        name:"downAction"
+        choices:["LPaddleDown", "RPaddleDown"]

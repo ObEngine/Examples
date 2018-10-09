@@ -1,0 +1,21 @@
+Include (Obe);
+
+Ball:
+    Collider:
+        unit:Unit<SceneUnits>()
+        points:[
+            0    , 0
+            0.12 , 0
+            0.12 , 0.12
+            0    , 0.12
+        ]
+    LevelSprite:
+        path:"Sprites/GameObjects/Ball/ball.png"
+        rect:Rect<SceneUnits>(0, 0, 0.12, 0.12)
+        rotation:0
+        scale:1.0
+        layer:0
+        z-depth:1
+    Script:
+        priority:0
+        source:"Data/GameObjects/Ball/Ball.lua"

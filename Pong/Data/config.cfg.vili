@@ -1,0 +1,10 @@
+Define Flag (Settings);
+    
+KeyBinding:
+    game:
+        LPaddleUp:["Pressed:Z", "Pressed:W"]
+        LPaddleDown:"Pressed:S"
+        RPaddleUp:"Pressed:Up"
+        RPaddleDown:"Pressed:Down"
+        LRelease:["Released:Z", "Released:S", "Released:W"]
+        RRelease:["Released:Up", "Released:Down"]

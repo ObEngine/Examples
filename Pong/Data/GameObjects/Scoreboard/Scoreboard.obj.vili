@@ -1,0 +1,20 @@
+Include (Obe);
+
+Scoreboard:
+    LevelSprite:
+        rect:
+            x:0
+            y:0
+            w:1
+            h:1
+            unit:"ViewPercentage"
+        xTransform:"Camera"
+        yTransform:"Camera"
+        rotation:0
+        scale:1
+        layer:1
+        z-depth:2
+    Script:
+        priority:0
+        source:"Data/GameObjects/Scoreboard/Scoreboard.lua"
+
