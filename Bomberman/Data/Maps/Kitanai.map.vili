@@ -1,0 +1,23 @@
+Include (Obe);
+Flag (Map);
+Flag (Lock);
+
+Meta:
+    name:"Kitanai"
+
+View:
+    size:1.0
+    pos:Vector2<SceneUnits>(0.0, 0.0)
+    Referential:Referential<TopLeft>()
+
+LevelSprites:
+    sprite0:
+        path:"Sprites/LevelSprites/home.png"
+        rect:Rect<SceneUnits>(0.0, 0.0, 0.118519, 0.066667)
+        rotation:0.0
+        layer:1
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+
+

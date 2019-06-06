@@ -1,0 +1,17 @@
+Define Flag (Anim);
+Define Flag (Lock);
+
+Meta:
+    name:"Walk_Down"
+    clock:150
+    play-mode:"Loop"
+Images:
+    ImageList:["down_1", "down_2"]
+    model:"%s.png"
+Groups:
+    main:
+        content:[0, 1]
+Animation:
+    AnimationCode:[
+        "PLAY_GROUP(main, 1)"
+    ]

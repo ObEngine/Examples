@@ -1,0 +1,11 @@
+Include (Obe);
+
+Box:
+    LevelSprite:
+        path:"Sprites/GameObjects/Box/box.png"
+        rect:Rect<SceneUnits>(0.0, 0.0, 0.181818, 0.181818)
+        xTransform:"Camera"
+        yTransform:"Camera"
+        z-depth:2
+    Script:
+        source:"Data/GameObjects/Box/Box.lua"

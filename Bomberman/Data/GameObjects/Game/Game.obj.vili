@@ -1,0 +1,7 @@
+Include (Obe);
+
+Game:
+    Script:
+        source:"Data/GameObjects/Game/Game.lua"
+
+

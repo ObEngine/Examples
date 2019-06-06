@@ -1,0 +1,23 @@
+Flag (Settings);
+
+GameConfig:
+    antiAliasing:True
+    depthOfField:True
+    scrollSensibility:1
+    framerateLimit:True
+    framerateTarget:144
+    vsync:True
+
+KeyBinding:
+    game:
+        P1_Left:"Hold:Q"
+        P1_Right:"Hold:D"
+        P1_Down:"Hold:S"
+        P1_Up:"Hold:Z"
+        P1_Bomb:"Pressed:Space"
+        P2_Left:"Hold:Left"
+        P2_Right:"Hold:Right"
+        P2_Down:"Hold:Down"
+        P2_Up:"Hold:Up"
+        P2_Bomb:"Pressed:Return"
+

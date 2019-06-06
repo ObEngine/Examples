@@ -1,0 +1,14 @@
+Include (Obe);
+
+Bomb:
+    Animator:
+        path:"Sprites/GameObjects/Bomb"
+    LevelSprite:
+        rect:Rect<SceneUnits>(0.0, 0.0, 0.181818, 0.181818)
+        xTransform:"Camera"
+        yTransform:"Camera"
+        z-depth:2
+    Script:
+        priority:0.0
+        source:"Data/GameObjects/Bomb/Bomb.lua"
+

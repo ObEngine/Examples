@@ -1,0 +1,33 @@
+Include (Obe);
+Flag (Map);
+Flag (Lock);
+
+Meta:
+    name:"Main"
+
+View:
+    size:1.0
+    pos:Vector2<SceneUnits>(0.0, 0.0)
+    Referential:Referential<TopLeft>()
+
+GameObjects:
+    terrain:
+        type:"Terrain"
+    character1:
+        type:"Character"
+        Requires:
+            characterId:"P1"
+            terrainId:"terrain"
+            pos:
+                x:1
+                y:1
+    character2:
+        type:"Character"
+        Requires:
+            characterId:"P2"
+            terrainId:"terrain"
+            pos:
+                x:11
+                y:9
+    game:
+        type:"Game"

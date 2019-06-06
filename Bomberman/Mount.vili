@@ -1,0 +1,5 @@
+Include(Obe);
+
+Mount:
+    Bomberman:Workspace("Bomberman", 1)
+    Root:Path("", 0)

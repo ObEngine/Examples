@@ -1,0 +1,5 @@
+Kitanai:
+    Script:
+        priority:0.0
+        source:"Data/GameObjects/Kitanai/Kitanai.lua"
+

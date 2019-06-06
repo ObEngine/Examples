@@ -1,0 +1,39 @@
+Include (Obe);
+Flag (Map);
+Flag (Lock);
+
+Meta:
+    name:"KeyBinder"
+
+View:
+    size:1.0
+    pos:Vector2<SceneUnits>(0.0, 0.0)
+
+LevelSprites:
+    sprite1:
+        path:"Sprites/LevelSprites//home.png"
+        rect:Rect<ViewPercentage>(0.0, 0.0, 1.0, 1.0)
+        rotation:0.0
+        layer:1
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+
+GameObjects:
+    ygrwt6o2:
+        type:"KeyBinder"
+        Requires:
+            p1list:["P1_Up", "P1_Down", "P1_Left", "P1_Right", "P1_Bomb"]
+            p2list:["P2_Up", "P2_Down", "P2_Left", "P2_Right", "P2_Bomb"]
+            keyTypes:
+                P1_Up:"Hold"
+                P1_Down:"Hold"
+                P1_Left:"Hold"
+                P1_Right:"Hold"
+                P1_Bomb:"Pressed"
+                P2_Up:"Hold"
+                P2_Down:"Hold"
+                P2_Left:"Hold"
+                P2_Right:"Hold"
+                P2_Bomb:"Pressed"
+
