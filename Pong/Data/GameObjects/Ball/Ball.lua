@@ -130,14 +130,17 @@ function Global.Game.Update(dt)
     end
 
     -- Win / Loss
-    if bx < 0.025 then
-        Scene:getGameObject("score"):RightScored();
-        resetpos();
-        Object.trajectory:setSpeed(1);
-    elseif bx > 0.975 then
-        Scene:getGameObject("score"):LeftScored();
-        resetpos();
-        Object.trajectory:setSpeed(1);
+    if bx < 0.025 or bx > 0.975 then
+        bumpSound:setPitch(1);
+        if bx < 0.025 then
+            Scene:getGameObject("score"):RightScored();
+            resetpos();
+            Object.trajectory:setSpeed(1);
+        elseif bx > 0.975 then
+            Scene:getGameObject("score"):LeftScored();
+            resetpos();
+            Object.trajectory:setSpeed(1);
+        end
     end
 end
 

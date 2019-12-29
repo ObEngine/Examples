@@ -1,14 +1,13 @@
 Ball = {};
 
 function Local.Init()
-    
     score1, score2 = 0, 0;
     canvas = obe.Canvas.Canvas(obe.Screen.Width, obe.Screen.Height);
     canvas:setTarget(This:LevelSprite());
 
     canvas:Rectangle("background")({
         x = 0, y = 0,
-        width = 1920, height = 1080,
+        width = 1, height = 1, unit = obe.Units.ViewPercentage,
         color = { r = 50, g = 50, b = 50, a = 255 },
         layer = 1
     });--
