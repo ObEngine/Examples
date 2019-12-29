@@ -1,7 +1,7 @@
 Flag (Settings);
 
 GameConfig:
-    antiAliasing:True
+    antiAliasing:False
     depthOfField:True
     scrollSensibility:1
     framerateLimit:True
@@ -14,10 +14,10 @@ KeyBinding:
         P1_Right:"Hold:D"
         P1_Down:"Hold:S"
         P1_Up:"Hold:Z"
-        P1_Bomb:"Pressed:Space"
+        P1_Bomb:"Pressed:W"
         P2_Left:"Hold:Left"
         P2_Right:"Hold:Right"
         P2_Down:"Hold:Down"
         P2_Up:"Hold:Up"
-        P2_Bomb:"Pressed:Return"
+        P2_Bomb:"Pressed:RShift"
 

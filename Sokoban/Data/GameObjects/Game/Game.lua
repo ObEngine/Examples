@@ -52,8 +52,8 @@ function Global.Game.Update(dt)
             end
         end
         if Object.victory then
-            victory_sprite:setSize(obe.UnitVector(Object.ratio_victory_sprite.x * Scene:getCamera():getSize().x, Object.ratio_victory_sprite.y * Scene:getCamera():getSize().y), obe.Referencial.Center)
-            victory_sprite:setPosition(Scene:getCamera():getPosition(obe.Referencial.Center), obe.Referencial.Center);
+            victory_sprite:setSize(obe.UnitVector(Object.ratio_victory_sprite.x * Scene:getCamera():getSize().x, Object.ratio_victory_sprite.y * Scene:getCamera():getSize().y), obe.Referential.Center)
+            victory_sprite:setPosition(Scene:getCamera():getPosition(obe.Referential.Center), obe.Referential.Center);
             victory_sprite:setVisible(true);
         end
     end

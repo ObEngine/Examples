@@ -60,8 +60,8 @@ function Object:init(path)
         local xSize = maxX/Scene:getCamera():getSize().x;
         local pSize = sprSize.x * (ySize > xSize and ySize or xSize);
 
-        Scene:getCamera():setPosition(pVec, obe.Referencial.Center);
-        Scene:getCamera():scale(pSize, obe.Referencial.Center);
+        Scene:getCamera():setPosition(pVec, obe.Referential.Center);
+        Scene:getCamera():scale(pSize, obe.Referential.Center);
         Object.initialized = true;
     end
 end

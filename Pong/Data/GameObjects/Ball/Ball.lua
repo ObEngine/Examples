@@ -5,7 +5,7 @@ end
 function setpos(x, y)
     This:getSceneNode():setPosition(obe.UnitVector(x, y, obe.Units.ViewPercentage));
     This:Collider():setPositionFromCentroid(obe.UnitVector(x, y, obe.Units.ViewPercentage));
-    This:LevelSprite():setPosition(obe.UnitVector(x, y, obe.Units.ViewPercentage), obe.Referencial.Center);
+    This:LevelSprite():setPosition(obe.UnitVector(x, y, obe.Units.ViewPercentage), obe.Referential.Center);
 end
 
 function Local.Init(posX, posY)
@@ -23,7 +23,7 @@ function Local.Init(posX, posY)
     Object.tNode:setProbe(This:Collider());
     This:getSceneNode():setPosition(obe.UnitVector(0.5, 0.5, obe.Units.ViewPercentage));
     This:Collider():setPositionFromCentroid(obe.UnitVector(0.5, 0.5, obe.Units.ViewPercentage));
-    This:LevelSprite():setPosition(obe.UnitVector(0.5, 0.5, obe.Units.ViewPercentage), obe.Referencial.Center);
+    This:LevelSprite():setPosition(obe.UnitVector(0.5, 0.5, obe.Units.ViewPercentage), obe.Referential.Center);
     Object.trajectory = Object.tNode:getTrajectory("Linear");
     Object.cycle = 0;
     Object.currentPos = obe.UnitVector(0.5, 0.5, obe.Units.ViewPercentage):to(obe.Units.SceneUnits);

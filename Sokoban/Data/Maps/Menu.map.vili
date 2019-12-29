@@ -8,7 +8,7 @@ Meta:
 View:
     size:1.0
     pos:Vector2<SceneUnits>(0.0, 0.0)
-    referencial:Referencial<TopLeft>()
+    Referential:Referential<TopLeft>()
 
 GameObjects:
     Game:

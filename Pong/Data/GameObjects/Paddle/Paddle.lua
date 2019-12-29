@@ -1,7 +1,7 @@
 function setpos(x, y)
     This:getSceneNode():setPosition(obe.UnitVector(x, y, obe.Units.ViewPercentage));
     This:Collider():setPositionFromCentroid(obe.UnitVector(x, y, obe.Units.ViewPercentage));
-    This:LevelSprite():setPosition(obe.UnitVector(x, y, obe.Units.ViewPercentage), obe.Referencial.Center);
+    This:LevelSprite():setPosition(obe.UnitVector(x, y, obe.Units.ViewPercentage), obe.Referential.Center);
 end
 
 function Local.Init(pos)
