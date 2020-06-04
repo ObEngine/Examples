@@ -1,5 +1,3 @@
-Define Flag (Settings);
-
 KeyBinding:
     game:
         UP:"Hold:Z"

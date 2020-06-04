@@ -1,14 +1,13 @@
-Include (Obe);
-Flag (Map);
-Flag (Lock);
-
 Meta:
     name:"Sokoban"
 
 View:
     size:1.0
-    pos:Vector2<SceneUnits>(0.0, 0.0)
-    Referential:Referential<TopLeft>()
+    position:
+        x:0.0
+        y:0.0
+        unit:"SceneUnits"
+    Referential:"TopLeft"
 
 GameObjects:
     Terrain:

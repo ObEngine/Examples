@@ -15,7 +15,9 @@ function Local.Init()
         y = victory_sprite:getSize().y / camera_size.y
     }
 
+    print("Loading Scene Sokoban.map.vili");
     Engine.Scene:loadFromFile("Data/Maps/Sokoban.map.vili", function()
+        print("================ OK SCENE LOADED ================")
         Engine.Scene:getGameObject("Terrain"):init(
             obe.System.Path("Data/Maps/level" .. Object.level .. ".txt"):find())
     end);

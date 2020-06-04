@@ -1,5 +1,3 @@
-Include(Obe);
-
 Mount:
-    Sokoban:Workspace("Sokoban", 1)
-    Root:Path("", 0)
+    Sokoban: Workspace { path: "Sokoban" }
+    Root: Path
