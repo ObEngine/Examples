@@ -5,7 +5,7 @@ function function_binding(toBind)
         blocFunctions[k] = function(position)
             local newObjs = {};
             for i in string.gmatch(v, "%S+") do
-                table.insert(newObjs, Scene:createGameObject(i)({position = position}));
+                table.insert(newObjs, Engine.Scene:createGameObject(i)({position = position}));
             end
             return newObjs
         end
@@ -51,22 +51,23 @@ function Object:init(path)
             end
         end
 
-        local pVec = obe.UnitVector(
-            offset.x * sprSize.x, 
+        local pVec = obe.Transform.UnitVector(
+            offset.x * sprSize.x,
             offset.y * sprSize.y
         );
 
-        local ySize = maxY/Scene:getCamera():getSize().y;
-        local xSize = maxX/Scene:getCamera():getSize().x;
+        local ySize = maxY/Engine.Scene:getCamera():getSize().y;
+        local xSize = maxX/Engine.Scene:getCamera():getSize().x;
         local pSize = sprSize.x * (ySize > xSize and ySize or xSize);
 
-        Scene:getCamera():setPosition(pVec, obe.Referential.Center);
-        Scene:getCamera():scale(pSize, obe.Referential.Center);
+        local camera = Engine.Scene:getCamera();
+        camera:setPosition(pVec, obe.Transform.Referential.Center);
+        camera:scale(pSize, obe.Transform.Referential.Center);
         Object.initialized = true;
     end
 end
 
-function Local.Init(toBind)  
+function Local.Init(toBind)
     function_binding(toBind);
     Object.elements = {};
 end
@@ -79,7 +80,7 @@ end
 
 function lines_from(path)
   lines = {}
-  for line in io.lines(path) do 
+  for line in io.lines(path) do
     lines[#lines + 1] = line
   end
   return lines

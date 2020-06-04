@@ -1,7 +1,7 @@
 Include (Obe);
 
 Robot:
-    LevelSprite:
+    Sprite:
         path:"Sprites/GameObjects/Robot/Robot_DOWN.png"
         rect:Rect<SceneUnits>(0.0, 0.0, 0.1, 0.1)
         xTransform:"Camera"

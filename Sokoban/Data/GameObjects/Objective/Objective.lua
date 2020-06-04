@@ -1,9 +1,9 @@
 function Local.Init(position)
-    local pVec = obe.UnitVector(
-        position.x * This:LevelSprite():getSize().x, 
-        position.y * This:LevelSprite():getSize().y
+    local pVec = obe.Transform.UnitVector(
+        position.x * This.Sprite:getSize().x,
+        position.y * This.Sprite:getSize().y
     );
-    This:LevelSprite():setPosition(pVec);
+    This.Sprite:setPosition(pVec);
 end
 
 function Object:getType()
@@ -11,5 +11,5 @@ function Object:getType()
 end
 
 function Object:getSprSize()
-    return This:LevelSprite():getSize();
+    return This.Sprite:getSize();
 end

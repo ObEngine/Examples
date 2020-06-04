@@ -1,4 +1,4 @@
-local Directions = { 
+local Directions = {
     LEFT = { x = -1, y = 0, cmp = "_LESS", use = "x" },
     RIGHT = { x = 1, y = 0, cmp = "_MORE", use = "x" },
     DOWN = { x = 0, y = 1, cmp = "_MORE", use = "y" },
@@ -15,19 +15,19 @@ EndWalking = 2;
 NotWalking = 3;
 
 function Local.Init(position)
-    Terrain = Scene:getGameObject("Terrain");
+    Terrain = Engine.Scene:getGameObject("Terrain");
     Object.pos = { x = position.x, y = position.y};
     Object.direction = "NONE";
     Object.walking = NotWalking;
-    Object.sprSize = This:LevelSprite():getSize().x;
+    Object.sprSize = This.Sprite:getSize().x;
     Object.speed = 0.5;
     Object.activated = false;
 
-    local pVec = obe.UnitVector(
-        position.x * This:LevelSprite():getSize().x, 
-        position.y * This:LevelSprite():getSize().y
+    local pVec = obe.Transform.UnitVector(
+        position.x * This.Sprite:getSize().x,
+        position.y * This.Sprite:getSize().y
     );
-    This:LevelSprite():setPosition(pVec);
+    This.Sprite:setPosition(pVec);
 end
 
 function Object:getType()
@@ -35,20 +35,20 @@ function Object:getType()
 end
 
 function Object:getSprSize()
-    return This:LevelSprite():getSize();
+    return This.Sprite:getSize();
 end
 
 function Object:move(direction)
-    --if Object.walking == NotWalking then 
+    --if Object.walking == NotWalking then
         Object.direction = direction;
-        Object.bound = { 
+        Object.bound = {
             x = Directions[Object.direction].x,
             y = Directions[Object.direction].y,
             cmp = Directions[Object.direction].cmp,
             use = Directions[Object.direction].use
         }
         Object.walking = Walking;
-        Object.pos = { 
+        Object.pos = {
             x = Object.pos.x + Directions[Object.direction].x,
             y = Object.pos.y + Directions[Object.direction].y;
         };
@@ -56,32 +56,32 @@ function Object:move(direction)
     --end
 end
 
-function Global.Game.Update(dt)
+function Event.Game.Update(dt)
     if Object.activated == false and Terrain.elements[Object.pos.y+1][Object.pos.x+1][1]:getType() == "Objective" then
         Object.activated = true;
-        This:LevelSprite():loadTexture("Sprites/GameObjects/Barrel/Barrel_activated.png");
+        This.Sprite:loadTexture("Sprites/GameObjects/Barrel/Barrel_activated.png");
     elseif Object.activated ~= false and Terrain.elements[Object.pos.y+1][Object.pos.x+1][1]:getType() ~= "Objective" then
         Object.activated = false;
-        This:LevelSprite():loadTexture("Sprites/GameObjects/Barrel/Barrel.png");
+        This.Sprite:loadTexture("Sprites/GameObjects/Barrel/Barrel.png");
     end
     if Object.walking == Walking then
         local mx, my;
         if Object.bound.use == "x" then
             mx, my = Object.bound.x * dt * Object.speed, 0;
-        else 
+        else
             mx, my = 0, Object.bound.y * dt * Object.speed;
         end
-        local move = obe.UnitVector(mx, my);
-        This:LevelSprite():move(move);
-        local newpos = This:LevelSprite():getPosition();
+        local move = obe.Transform.UnitVector(mx, my);
+        This.Sprite:move(move);
+        local newpos = This.Sprite:getPosition();
         if CompOps[Object.bound.cmp](newpos[Object.bound.use], Object.pos[Object.bound.use] * Object.sprSize) then
             Object.walking = NotWalking;
         end
     else
-        local spritePos = obe.UnitVector(
-            Object.pos.x * This:LevelSprite():getSize().x, 
-            Object.pos.y * This:LevelSprite():getSize().y
+        local spritePos = obe.Transform.UnitVector(
+            Object.pos.x * This.Sprite:getSize().x,
+            Object.pos.y * This.Sprite:getSize().y
         );
-        This:LevelSprite():setPosition(spritePos);
+        This.Sprite:setPosition(spritePos);
     end
 end

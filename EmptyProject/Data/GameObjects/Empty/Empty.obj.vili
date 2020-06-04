@@ -1,0 +1,5 @@
+Include (Obe);
+
+Empty:
+    Script:
+        source:"Data/GameObjects/Empty/Empty.lua"

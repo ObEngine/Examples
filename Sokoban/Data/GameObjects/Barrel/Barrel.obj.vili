@@ -1,7 +1,7 @@
 Include (Obe);
 
 Barrel:
-    LevelSprite:
+    Sprite:
         path:"Sprites/GameObjects/Barrel/Barrel.png"
         rect:Rect<SceneUnits>(0.0, 0.0, 0.1, 0.1)
         xTransform:"Camera"

@@ -1,7 +1,7 @@
 Include (Obe);
 
 Objective:
-    LevelSprite:
+    Sprite:
         path:"Sprites/GameObjects/Objective/Objective.png"
         rect:Rect<SceneUnits>(0.0, 0.0, 0.1, 0.1)
         xTransform:"Camera"

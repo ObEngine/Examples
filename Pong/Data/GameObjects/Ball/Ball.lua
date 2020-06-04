@@ -11,7 +11,7 @@ end
 function Local.Init(posX, posY)
     Object.y = 0;
     Object.rpo = 0;
-    bumpSound = obe.Sound("Sounds/bump.ogg");
+    bumpSound = Audio:load("Sounds/bump.ogg");
 
     This:Collider():setPosition(obe.UnitVector.new(posX, posY, obe.Units.ScenePixels));
     Object.tNode = obe.TrajectoryNode(This:getSceneNode());

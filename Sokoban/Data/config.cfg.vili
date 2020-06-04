@@ -1,5 +1,5 @@
 Define Flag (Settings);
-    
+
 KeyBinding:
     game:
         UP:"Hold:Z"
@@ -8,3 +8,6 @@ KeyBinding:
         DOWN:"Hold:S"
         Reset:"Pressed:R"
         Next:"Pressed:Return"
+
+Debug:
+    logLevel:1

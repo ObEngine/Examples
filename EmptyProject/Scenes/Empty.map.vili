@@ -1,0 +1,18 @@
+Include (Obe);
+
+Meta:
+    name:"Empty"
+
+View:
+    pos:Vector2<SceneUnits>(0, 0)
+    size:1
+
+Sprites:
+    gear:
+        path:"Sprites/eggplant.png"
+        rect:Rect<SceneUnits>(0.5, 0.5, 1, 1)
+        antiAliasing:False
+
+GameObjects:
+    empty:
+        type:"Empty"
