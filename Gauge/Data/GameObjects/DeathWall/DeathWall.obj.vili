@@ -1,0 +1,21 @@
+DeathWall:
+    Script:
+        sources: [
+            "Data/config.lua",
+            "Data/GameObjects/DeathWall/DeathWall.lua"
+            ]
+    permanent:true
+
+    Sprite:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.5
+            y:0.5
+            width:0.08
+            height:0.3
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:1
+        color: "000000"
+
+

@@ -1,0 +1,153 @@
+Meta:
+    name:"Gauge"
+
+View:
+    size:1.0
+    position:
+        x:0.0
+        y:0.0
+        unit:"SceneUnits"
+    referential:"TopLeft"
+
+Sprites:
+    background:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.5
+            y:0.5
+            width:1.0
+            height:1.0
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:5
+        color: "808080"
+
+    gauge:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.5
+            y:0.5
+            width:0.9
+            height:0.2
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:4
+        color: "b2a4a4"
+
+    death_wall_left:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.05
+            y:0.5
+            width:0.02
+            height:0.3
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:1
+        color: "000000"
+
+    death_wall_right:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.95
+            y:0.5
+            width:0.02
+            height:0.3
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:1
+        color: "000000"
+
+    scoring_indicator_first_zone_left:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.12
+            y:0.5
+            width:0.01
+            height:0.25
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:3
+        color: "fbde4a"
+
+    scoring_indicator_first_zone_right:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.88
+            y:0.5
+            width:0.01
+            height:0.25
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:3
+        color: "fbde4a"
+
+    scoring_indicator_second_zone_left:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.08
+            y:0.5
+            width:0.01
+            height:0.25
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:3
+        color: "fbde4a"
+
+    scoring_indicator_second_zone_right:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.92
+            y:0.5
+            width:0.01
+            height:0.25
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:3
+        color: "fbde4a"
+
+    bonus_left:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.32
+            y:0.5
+            width:0.01
+            height:0.25
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:2
+        color: "d61f1f"
+        visible: false
+
+    bonus_right:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.68
+            y:0.5
+            width:0.01
+            height:0.25
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:2
+        color: "d61f1f"
+        visible: false
+
+GameObjects:
+    gameManager:
+        type:"GameManager"
+
+    player:
+        type:"Player"
+        Requires:
+            gameManagerId: "gameManager"
+    
+    deathWall:
+        type:"DeathWall"
+        Requires:
+            gameManagerId: "gameManager"
+    
+    bonus:
+        type:"Bonus"
+        Requires:
+            gameManagerId: "gameManager"
+            deathWallId: "deathWall"
