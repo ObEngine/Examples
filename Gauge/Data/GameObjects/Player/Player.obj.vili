@@ -1,0 +1,21 @@
+Player:
+    Script:
+        sources: [
+            "Data/config.lua",
+            "Data/GameObjects/Player/Player.lua"
+            ]
+    permanent:true
+
+    Sprite:
+        path:"Sprites/pixel.png"
+        rect:
+            x:0.5
+            y:0.5
+            width:0.1
+            height:0.22
+            unit:"ViewPercentage"
+            referential:"Center"
+        zdepth:3
+        color: "faf0e6"
+
+

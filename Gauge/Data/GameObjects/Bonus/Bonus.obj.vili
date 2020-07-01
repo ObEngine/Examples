@@ -1,0 +1,7 @@
+Bonus:
+    Script:
+        sources: [
+            "Data/config.lua",
+            "Data/GameObjects/Bonus/Bonus.lua"
+            ]
+    permanent:true
