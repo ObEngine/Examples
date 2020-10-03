@@ -54,7 +54,7 @@ function InitializeBindings()
     end
 end
 
-function Event.Game.Update(dt)
+function Event.Game.Update(event)
     if Object.walking == StartWalking then
         Object.bound = {
             x = Directions[Object.direction].x,
@@ -100,9 +100,9 @@ function Event.Game.Update(dt)
     elseif Object.walking == Walking then
         local mx, my;
         if Object.bound.use == "x" then
-            mx, my = Object.bound.x * dt * Object.speed, 0;
+            mx, my = Object.bound.x * event.dt * Object.speed, 0;
         else
-            mx, my = 0, Object.bound.y * dt * Object.speed;
+            mx, my = 0, Object.bound.y * event.dt * Object.speed;
         end
         local move = obe.Transform.UnitVector(mx, my);
         This.Sprite:move(move);

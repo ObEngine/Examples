@@ -1,4 +1,4 @@
-KeyBinding:
+Input:
     game:
         UP:"Hold:Z"
         LEFT:"Hold:Q"
@@ -6,6 +6,3 @@ KeyBinding:
         DOWN:"Hold:S"
         Reset:"Pressed:R"
         Next:"Pressed:Return"
-
-Debug:
-    logLevel:1

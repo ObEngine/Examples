@@ -56,7 +56,7 @@ function Object:move(direction)
     --end
 end
 
-function Event.Game.Update(dt)
+function Event.Game.Update(event)
     if Object.activated == false and Terrain.elements[Object.pos.y+1][Object.pos.x+1][1]:getType() == "Objective" then
         Object.activated = true;
         This.Sprite:loadTexture("Sprites/GameObjects/Barrel/Barrel_activated.png");
@@ -67,9 +67,9 @@ function Event.Game.Update(dt)
     if Object.walking == Walking then
         local mx, my;
         if Object.bound.use == "x" then
-            mx, my = Object.bound.x * dt * Object.speed, 0;
+            mx, my = Object.bound.x * event.dt * Object.speed, 0;
         else
-            mx, my = 0, Object.bound.y * dt * Object.speed;
+            mx, my = 0, Object.bound.y * event.dt * Object.speed;
         end
         local move = obe.Transform.UnitVector(mx, my);
         This.Sprite:move(move);
