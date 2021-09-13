@@ -1,0 +1,23 @@
+Framerate:
+    framerateLimit: true
+    framerateTarget: 165
+    vsync: true
+
+Input:
+    game:
+        CameraLeft: "Hold: Left"
+        CameraRight: "Hold: Right"
+        CameraUp: "Hold: Up"
+        CameraDown: "Hold: Down"
+        CameraZoom: "Pressed: MouseWheelDown"
+        CameraUnzoom: "Pressed: MouseWheelUp"
+        ToggleCameraSmoothing: "Pressed: F2"
+        Up: "Pressed: Z"
+        Down: "Pressed: S"
+        Left: "Pressed: Q"
+        Right: "Pressed: D"
+        RUp: "Released: Z"
+        RDown: "Released: S"
+        RLeft: "Released: Q"
+        RRight: "Released: D"
+        Goto: "Pressed: RMB"

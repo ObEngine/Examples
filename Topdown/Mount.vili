@@ -1,0 +1,6 @@
+Mount:
+    topdown: Workspace { path: "Topdown" }
+    objects: Path { path: "topdown://Data/GameObjects" }
+    scenes: Path { path: "topdown://Scenes" }
+    tilesets: Path { path: "topdown://Tilesets" }
+    scripts: Path { path: "topdown://Scripts" }

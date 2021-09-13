@@ -1,0 +1,20 @@
+Meta:
+    name: "IDLE_DOWN"
+    clock: 0.2
+    mode: "Loop"
+
+Images:
+    images: [
+        "1.png", "2.png", "3.png", "4.png", "5.png", "6.png"
+    ]
+
+Groups:
+    main:
+        content: [
+            0, 1, 2, 3, 4, 5
+        ]
+
+Animation:
+    code: [
+        play_group { group:"main" }
+    ]

@@ -1,0 +1,24 @@
+Character:
+    Animator:
+        path: "topdown://Characters/Bob"
+        default: "IDLE_DOWN"
+    Sprite:
+        rect:
+            x: 0
+            y: 0
+            width: 16
+            height: 22
+            unit: "ScenePixels"
+        layer: 1
+        zdepth: 0
+    Collider:
+        points: [
+            {x: 2, y: 20},
+            {x: 9, y: 20},
+            {x: 9, y: 23},
+            {x: 2, y: 23}
+        ]
+        unit: "ScenePixels"
+        tag: "Character"
+    Script:
+        source: "self://Character.lua"
