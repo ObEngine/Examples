@@ -8,3 +8,6 @@ A set of game examples made with [ÖbEngine](https://github.com/Sygmei/ObEngine)
 
 ## [![](https://raw.githubusercontent.com/Sygmei/ObEngineExamples/master/static/bomberman_icon.png) Bomberman](https://github.com/Sygmei/ObEngineExamples/tree/master/Bomberman) by Sygmei (MIT License)
 ![](https://raw.githubusercontent.com/Sygmei/ObEngineExamples/master/static/bomberman_screen.png)
+
+## [![](https://raw.githubusercontent.com/Sygmei/ObEngineExamples/master/static/gauge_icon.png) Gauge](https://github.com/Sygmei/ObEngineExamples/tree/master/Gauge) by PierrickLP (MIT License)
+![](https://raw.githubusercontent.com/Sygmei/ObEngineExamples/master/static/gauge_screen.png)
