@@ -15,11 +15,11 @@ function Local.Init()
         y = victory_sprite:getSize().y / camera_size.y
     }
 
-    print("Loading Scene Sokoban.map.vili");
+    -- print("Loading Scene Sokoban.map.vili");
     Engine.Scene:loadFromFile("Data/Maps/Sokoban.map.vili", function()
-        print("================ OK SCENE LOADED ================")
+        -- print("================ OK SCENE LOADED ================")
         Engine.Scene:getGameObject("Terrain"):init(
-            obe.System.Path("Data/Maps/level" .. Object.level .. ".txt"):find())
+            obe.System.Path("Data/Maps/level" .. Object.level .. ".txt"):find());
     end);
 
 end
@@ -62,22 +62,25 @@ function Event.Game.Update(dt)
                     end
                 end
             end
-        end
-        if Object.victory then
-            victory_sprite:setSize(obe.Transform.UnitVector(
-                                       Object.ratio_victory_sprite.x *
-                                           Engine.Scene:getCamera():getSize().x,
-                                       Object.ratio_victory_sprite.y *
-                                           Engine.Scene:getCamera():getSize().y),
-                                   obe.Transform.Referential.Center)
-            victory_sprite:setPosition(Engine.Scene:getCamera():getPosition(
-                                           obe.Transform.Referential.Center),
+            if Object.victory then
+                local camera_size = Engine.Scene:getCamera():getSize();
+                local victory_size = obe.Transform.UnitVector(
+                                         Object.ratio_victory_sprite.x *
+                                             camera_size.x,
+                                         Object.ratio_victory_sprite.y *
+                                             camera_size.y)
+                victory_sprite:setSize(victory_size,
                                        obe.Transform.Referential.Center);
-            victory_sprite:setVisible(true);
+                victory_sprite:setPosition(
+                    Engine.Scene:getCamera():getPosition(
+                        obe.Transform.Referential.Center),
+                    obe.Transform.Referential.Center);
+                victory_sprite:setVisible(true);
+            end
         end
     end
 end
 
 function Event.Game.Render()
-    collectgarbage();
+    -- collectgarbage();
 end

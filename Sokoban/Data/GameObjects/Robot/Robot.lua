@@ -15,8 +15,8 @@ EndWalking = 2;
 NotWalking = 3;
 
 function Local.Init(position)
-    print("Beep boop");
-    print("============= Initializing Robot", inspect(position));
+    -- print("Beep boop");
+    -- print("============= Initializing Robot", inspect(position));
     Terrain = Engine.Scene:getGameObject("Terrain");
     Object.pos = { x = position.x, y = position.y};
     Object.direction = "NONE";
@@ -30,7 +30,7 @@ function Local.Init(position)
         position.y * This.Sprite:getSize().y
     );
     This.Sprite:setPosition(pVec);
-    print("Robot is done");
+    -- print("Robot is done");
 end
 
 function Object:getType()
@@ -42,7 +42,7 @@ function Object:getSprSize()
 end
 
 function InitializeBindings()
-    print("=============== Initializing Robot Bindings");
+    -- print("=============== Initializing Robot Bindings");
     for k, v in pairs(Directions) do
         Event.Actions[k] = function()
             if Object.walking == NotWalking and not Engine.Scene:getGameObject("Game").victory then
