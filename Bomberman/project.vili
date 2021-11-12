@@ -1,0 +1,5 @@
+id: "bomberman"
+name: "Bomberman"
+version: "1.0.0"
+obengine_version: "0.5.0"
+source: "https://github.com/ObEngine/Examples"

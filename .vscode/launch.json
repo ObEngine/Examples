@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "obengine",
+            "request": "attach",
+            "name": "[ObEngine] Debug",
+            "host": "localhost",
+            "port": 21122
+        }
+    ]
+}
