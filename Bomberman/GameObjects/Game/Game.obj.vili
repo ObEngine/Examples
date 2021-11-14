@@ -1,5 +1,4 @@
-Game:
-    Script:
-        source: "self://Game.lua"
+Script:
+    source: "self://Game.lua"
 
 

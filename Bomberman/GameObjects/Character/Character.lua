@@ -27,22 +27,25 @@ function Local.Init(characterId, terrainId, pos)
     Object.sprSize = This.Sprite:getSize().x;
     Object.speed = 0.5;
     Object.bombIndex = 0;
-    This.Animator:load(obe.System.Path("root://Sprites/GameObjects/Character/" .. characterId));
+    This.Animator:load(
+        obe.System.Path("root://Sprites/GameObjects/Character/" .. characterId), Engine.Resources
+    );
     This.Animator:setKey("Idle_Right");
+    This.Animator:setTarget(This.Sprite);
     InitializeBindings();
     Object.dead = false;
 end
 
 function InitializeBindings()
     for k, v in pairs(Directions) do
-        Global.Actions[Object.cid .. "_" .. k] = function()
+        Event.Actions[Object.cid .. "_" .. k] = function()
             if Object.walking == NotWalking then
                 Object.direction = k;
                 Object.walking = StartWalking;
             end
         end
     end
-    Global.Actions[Object.cid .. "_Bomb"] = function()
+    Event.Actions[Object.cid .. "_Bomb"] = function()
         if not Object.dead then
             Object.bombIndex = Object.bombIndex + 1;
             Engine.Scene:createGameObject(
@@ -94,7 +97,7 @@ function Event.Game.Update(evt)
             Object.walking = EndWalking;
         end
     elseif Object.walking == EndWalking then
-        if not InputManager:getAction(Object.cid .. "_" .. Object.direction):check() then
+        if not Engine.Input:getAction(Object.cid .. "_" .. Object.direction):check() then
             if not Object.dead then
                 This.Animator:setKey("Idle_" .. Object.direction);
             end

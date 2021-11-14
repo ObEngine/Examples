@@ -1,6 +1,6 @@
 Meta:
     name: "Propagate"
-    clock: 1000
+    clock: 1
     mode: "OneTime"
 
 Images:

@@ -5,7 +5,9 @@ end
 function setpos(x, y)
     This:getSceneNode():setPosition(obe.UnitVector(x, y, obe.Units.ViewPercentage));
     This:Collider():setPositionFromCentroid(obe.UnitVector(x, y, obe.Units.ViewPercentage));
-    This:LevelSprite():setPosition(obe.UnitVector(x, y, obe.Units.ViewPercentage), obe.Referential.Center);
+    This:LevelSprite():setPosition(
+        obe.UnitVector(x, y, obe.Units.ViewPercentage), obe.Referential.Center
+    );
 end
 
 function Local.Init(posX, posY)
@@ -15,15 +17,15 @@ function Local.Init(posX, posY)
 
     This:Collider():setPosition(obe.UnitVector.new(posX, posY, obe.Units.ScenePixels));
     Object.tNode = obe.TrajectoryNode(This:getSceneNode());
-    Object.tNode:addTrajectory("Linear")
-        :setAngle(180)
-        :setSpeed(1)
-        :setAcceleration(0)
-        :onCollide(Object.collide);
+    Object.tNode:addTrajectory("Linear"):setAngle(180):setSpeed(1):setAcceleration(0):onCollide(
+        Object.collide
+    );
     Object.tNode:setProbe(This:Collider());
     This:getSceneNode():setPosition(obe.UnitVector(0.5, 0.5, obe.Units.ViewPercentage));
     This:Collider():setPositionFromCentroid(obe.UnitVector(0.5, 0.5, obe.Units.ViewPercentage));
-    This:LevelSprite():setPosition(obe.UnitVector(0.5, 0.5, obe.Units.ViewPercentage), obe.Referential.Center);
+    This:LevelSprite():setPosition(
+        obe.UnitVector(0.5, 0.5, obe.Units.ViewPercentage), obe.Referential.Center
+    );
     Object.trajectory = Object.tNode:getTrajectory("Linear");
     Object.cycle = 0;
     Object.currentPos = obe.UnitVector(0.5, 0.5, obe.Units.ViewPercentage):to(obe.Units.SceneUnits);
@@ -71,8 +73,10 @@ function Object.collide()
     local px, py = currentPaddlePoint.x, currentPaddlePoint.y;
     local adj, opo = math.abs(px - bx), math.abs(py - by);
     local orientTraj;
-    if orientAngle == 90 then orientTraj = by < py and -1 or 1;
-    else orientTraj = by < py and 1 or -1;
+    if orientAngle == 90 then
+        orientTraj = by < py and -1 or 1;
+    else
+        orientTraj = by < py and 1 or -1;
     end
     Object.trajectory:setAngle(360 - math.deg(math.atan(opo / adj)) * orientTraj + orientAngle);
     Object.trajectory:setSpeed(Object.trajectory:getSpeed() + 0.1);
@@ -88,12 +92,14 @@ function Object:newLine()
         self.canvas:remove(tostring(self.index));
     end
     self.index = self.index + 1;
-    self.t = self.canvas:Line(tostring(self.index))({
-        p1 = { x = self.oldPos.x, y = self.oldPos.y, color = self.trailcolor },
-        p2 = { x = self.currentPos.x, y = self.currentPos.y, color = { a = 0 } },
-        thickness = 2,
-        layer = 0
-    });
+    self.t = self.canvas:Line(tostring(self.index))(
+        {
+            p1 = {x = self.oldPos.x, y = self.oldPos.y, color = self.trailcolor},
+            p2 = {x = self.currentPos.x, y = self.currentPos.y, color = {a = 0}},
+            thickness = 2,
+            layer = 0
+        }
+    );
     return self.t;
 end
 
@@ -103,7 +109,7 @@ function Global.Game.Update(dt)
     Object.pos = This:Collider():getCentroid();
     if Object.trail then
         Object:variateColor();
-        Object.trail.p1 = { x = Object.pos.x, y = Object.pos.y, color = Object.trailcolor };
+        Object.trail.p1 = {x = Object.pos.x, y = Object.pos.y, color = Object.trailcolor};
     end
 
     -- Trajectory
@@ -151,21 +157,33 @@ end
 function Object:variateColor()
     if self.cycle == 0 then
         self.trailcolor.g = self.trailcolor.g + 1;
-        if self.trailcolor.g == 255 then self.cycle = 1 end
+        if self.trailcolor.g == 255 then
+            self.cycle = 1
+        end
     elseif self.cycle == 1 then
         self.trailcolor.r = self.trailcolor.r - 1;
-        if self.trailcolor.r == 0 then self.cycle = 2; end
+        if self.trailcolor.r == 0 then
+            self.cycle = 2;
+        end
     elseif self.cycle == 2 then
         self.trailcolor.b = self.trailcolor.b + 1;
-        if self.trailcolor.b == 255 then self.cycle = 3; end
+        if self.trailcolor.b == 255 then
+            self.cycle = 3;
+        end
     elseif self.cycle == 3 then
         self.trailcolor.g = self.trailcolor.g - 1;
-        if self.trailcolor.g == 0 then self.cycle = 4; end
+        if self.trailcolor.g == 0 then
+            self.cycle = 4;
+        end
     elseif self.cycle == 4 then
         self.trailcolor.r = self.trailcolor.r + 1;
-        if self.trailcolor.r == 255 then self.cycle = 5; end
+        if self.trailcolor.r == 255 then
+            self.cycle = 5;
+        end
     elseif self.cycle == 5 then
         self.trailcolor.b = self.trailcolor.b - 1;
-        if self.trailcolor.b == 0 then self.cycle = 0; end
+        if self.trailcolor.b == 0 then
+            self.cycle = 0;
+        end
     end
 end

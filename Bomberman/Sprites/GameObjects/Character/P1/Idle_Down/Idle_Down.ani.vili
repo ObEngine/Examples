@@ -1,6 +1,6 @@
 Meta:
     name: "Idle_Down"
-    clock: 150
+    clock: 0.15
     mode: "Loop"
 
 Images:

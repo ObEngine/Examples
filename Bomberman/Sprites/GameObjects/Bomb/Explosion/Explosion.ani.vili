@@ -1,6 +1,6 @@
 Meta:
     name: "Explosion"
-    clock: 200
+    clock: 0.2
     mode: "Loop"
 
 Images:
@@ -14,5 +14,5 @@ Groups:
 Animation:
     code: [
         play_group { group: "main" },
-        set_animation { animation: "propagate" }
+        set_animation { animation: "Propagate" }
     ]

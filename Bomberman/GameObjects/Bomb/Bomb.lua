@@ -58,8 +58,6 @@ function Local.Init(position, terrain, power)
     Object.terrain = terrain;
     Object.position = position;
     Object.power = power;
-    Object.chrono = obe.Chronometer();
-    Object.chrono:setLimit(1000);
 end
 
 CAN_PROPAGATE = 0;
@@ -77,6 +75,7 @@ function Object:canPropagate(x, y)
 end
 
 function Object:propagate()
+    checkForKills(Object.position.x, Object.position.y);
     for i = 1, Object.power do
         for direction, info in pairs(Directions) do
             if info.propagate then
@@ -99,7 +98,7 @@ function Object:propagate()
                 end
                 if propagationStatus == CAN_PROPAGATE or propagationStatus == STOP_PROPAGATE then
                     local sprId = This:getId() .. "_bpart_" .. direction .. "_" .. i;
-                    local newSprite = Scene:createLevelSprite(sprId);
+                    local newSprite = Engine.Scene:createSprite(sprId);
                     table.insert(ExpSprites, sprId);
                     newSprite:loadTexture("Sprites/GameObjects/Bomb/" .. useImg .. ".png");
                     local spriteSize = obe.Transform.UnitVector(
@@ -123,28 +122,29 @@ function Object:propagate()
             end
         end
     end
-    self.chrono:start();
+    Schedule():after(0.4):run(
+        function()
+            This:delete();
+        end
+    );
 end
 
-function Global.Game.Update(dt)
+function Event.Game.Update(evt)
     if This.Animator:getKey() == "Propagate" and not Object.exploded then
         Object:propagate();
         Object.exploded = true;
-    end
-    if Object.chrono:limitExceeded() then
-        This:delete();
     end
 end
 
 function Local.Delete()
     for k, v in pairs(ExpSprites) do
-        Scene:removeLevelSprite(v);
+        Engine.Scene:removeSprite(v);
     end
 end
 
 function checkForKills(x, y)
-    local character1 = Scene:getGameObject("character1");
-    local character2 = Scene:getGameObject("character2");
+    local character1 = Engine.Scene:getGameObject("character1");
+    local character2 = Engine.Scene:getGameObject("character2");
     if character1.pos.x == x and character1.pos.y == y then
         character1:kill();
     end

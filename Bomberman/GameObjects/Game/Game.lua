@@ -1,5 +1,5 @@
 function makeTexture(name, path)
-    local texture = Scene:createLevelSprite(name);
+    local texture = Engine.Scene:createSprite(name);
     texture:setPosition(obe.Transform.UnitVector(2.4, 1));
     texture:setSize(obe.Transform.UnitVector(1, 0.5));
     texture:loadTexture(path);
@@ -8,8 +8,8 @@ function makeTexture(name, path)
 end
 
 function Local.Init()
-    Object.character1 = Scene:getGameObject("character1");
-    Object.character2 = Scene:getGameObject("character2");
+    Object.character1 = Engine.Scene:getGameObject("character1");
+    Object.character2 = Engine.Scene:getGameObject("character2");
 
     Object.nobody_win = makeTexture("nobody_win", "Sprites/GameObjects/Game/nobody_win.png");
     Object.p1_win = makeTexture("p1_win", "Sprites/GameObjects/Game/p1_win.png");
@@ -18,7 +18,7 @@ function Local.Init()
     Object.run_again_count = 0;
 end
 
-function Global.Game.Update(dt)
+function Event.Game.Update(evt)
     if not Object.run_again then
         if Object.character1.dead and Object.character2.dead then
             Object.nobody_win:setVisible(true);
@@ -32,9 +32,9 @@ function Global.Game.Update(dt)
         end
     end
     if Object.run_again then
-        Object.run_again_count = Object.run_again_count + dt;
+        Object.run_again_count = Object.run_again_count + evt.dt;
     end
     if Object.run_again_count > 5 then
-        Scene:loadFromFile("Main.map.vili");
+        Engine.Scene:loadFromFile("scenes://main.map.vili");
     end
 end
