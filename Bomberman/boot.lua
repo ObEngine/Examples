@@ -1,3 +1,3 @@
 function Game.Start()
-    Engine.Scene:loadFromFile("bindings.map.vili");
+    Engine.Scene:loadFromFile("scenes://bindings.map.vili");
 end

@@ -1,4 +1,13 @@
+local gkeyTypes;
+
 function Local.Init(p1list, p2list, keyTypes)
+    local project_config_file = obe.System.Path("projectcfg://config.vili"):find();
+    if project_config_file:success() then
+        goAway = true;
+        This.Sprite:setVisible(false);
+        return;
+    end
+
     gkeyTypes = keyTypes;
     local window_size = Engine.Window:getSize();
     canvas = obe.Canvas.Canvas(window_size.x, window_size.y);
@@ -45,18 +54,15 @@ function Local.Init(p1list, p2list, keyTypes)
     lists = {P1 = p1list, P2 = p2list};
     current = "P1";
     configure = true;
-    print("before sprite assignment");
-    local s = This:getSprite();
-    print("target will be", s);
     canvas:render(This.Sprite);
     config = {};
     goAway = false;
     launched = false;
 end
 
-function Event.Game.Update(dt)
+function Event.Game.Update(evt)
     if configure then
-        local allPressedButtons = obe.Input.GetAllPressedButtons();
+        local allPressedButtons = Engine.Input:getPressedInputs();
         if waitForZero then
             if #allPressedButtons == 0 then
                 waitForZero = false;
@@ -79,13 +85,13 @@ function Event.Game.Update(dt)
                                           lists[current][indexes[current]] .. " Button : ";
                 indexes[current] = indexes[current] + 1;
             end
-            canvas:render();
+            canvas:render(This.Sprite);
             waitForZero = true;
         end
     end
     if goAway then
         Engine.Scene:getCamera():setSize(
-            Engine.Scene:getCamera():getSize().y / 2 - 1 * dt, obe.Referential.Center
+            Engine.Scene:getCamera():getSize().y / 2 - 1 * evt.dt, obe.Transform.Referential.Center
         );
         if Engine.Scene:getCamera():getSize().y < 0 and not launched then
             goAway = false;
@@ -96,18 +102,19 @@ function Event.Game.Update(dt)
 end
 
 function SaveConfiguration()
-    local configPath = obe.Path("Data/config.cfg.vili"):find();
-    binding = Vili.ViliParser(configPath);
-    for k, v in pairs(config) do
-        binding:root():at("KeyBinding", "game"):getDataNode(k):set(gkeyTypes[k] .. ":" .. v);
+    local input_game_config = {};
+    for action_name, input_name in pairs(config) do
+        input_game_config[action_name] = gkeyTypes[action_name] .. ":" .. input_name;
     end
-    binding:writeFile(configPath);
+    local input_config = {game = input_game_config};
+    local full_config = {Input = input_config};
+    vili.to_file("projectcfg://config.vili", full_config);
     goAway = true;
-    InputManager:configure(binding:root():at("KeyBinding"));
+    Engine.Input:configure(vili.from_lua(input_config));
 end
 
 function LaunchGame()
-    Engine.Scene:loadFromFile('Main.map.vili');
+    Engine.Scene:loadFromFile("scenes://main.map.vili");
 end
 
 function Local.Delete()

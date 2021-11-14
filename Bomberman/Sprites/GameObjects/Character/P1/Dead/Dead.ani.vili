@@ -1,17 +1,17 @@
-Define Flag (Anim);
-Define Flag (Lock);
-
 Meta:
-    name:"Dead"
-    clock:150
-    play-mode:"Loop"
+    name: "Dead"
+    clock: 150
+    mode: "Loop"
+
 Images:
-    ImageList:[1, 2]
-    model:"dead_%s.png"
+    images: [1, 2]
+    model: "dead_%s.png"
+
 Groups:
     main:
-        content:[0, 1]
+        content: [0, 1]
+
 Animation:
-    AnimationCode:[
-        "PLAY_GROUP(main, 1)"
+    code: [
+        play_group { group: "main" }
     ]

@@ -1,27 +1,24 @@
-Include (Obe);
+Collider:
+    unit: "SceneUnits"
+    points: [
+        {x: 0, y: 0},
+        {x: 0.181818, y: 0},
+        {x: 0.181818, y: 0.181818},
+        {x: 0, y: 0.181818}
+    ]
 
-Character:
-    Collider:
-        unit:
-            unit:"SceneUnits"
-        points:[0, 0
-                0.181818, 0
-                0.181818, 0.181818
-                0, 0.181818]
-    Animator:
-        path:""
-    LevelSprite:
-        rect:Rect<SceneUnits>(0.0, 0.0, 0.181818, 0.181818)
-        xTransform:"Camera"
-        yTransform:"Camera"
-        z-depth:1
-    Script:
-        priority:0.0
-        source:"Data/GameObjects/Character/Character.lua"
+Animator:
+    path: ""
 
-Requires:
-    Input:
-        terrainId:
-            type:"String"
-    Output:
-        terrainId:&(terrainId/value)
+Sprite:
+    rect:
+        x: 0
+        y: 0
+        width: 0.181818
+        height: 0.181818
+    transform: CameraTransform
+    zdepth: 1
+
+Script:
+    priority: 0
+    source: "self://Character.lua"

@@ -1,17 +1,17 @@
-Define Flag (Anim);
-Define Flag (Lock);
-
 Meta:
-    name:"Idle_Down"
-    clock:150
-    play-mode:"Loop"
+    name: "Idle_Down"
+    clock: 150
+    mode: "Loop"
+
 Images:
-    ImageList:["down_idle"]
-    model:"%s.png"
+    images: ["down_idle"]
+    model: "%s.png"
+
 Groups:
     main:
-        content:[0]
+        content: [0]
+
 Animation:
-    AnimationCode:[
-        "PLAY_GROUP(main, 1)"
+    code: [
+        play_group { group: "main" }
     ]

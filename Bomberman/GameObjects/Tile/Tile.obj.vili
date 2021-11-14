@@ -1,10 +1,10 @@
-Include (Obe);
-
-Tile:
-    LevelSprite:
-        rect:Rect<SceneUnits>(0.0, 0.0, 0.181818, 0.181818)
-        xTransform:"Camera"
-        yTransform:"Camera"
-        z-depth:1
-    Script:
-        source:"Data/GameObjects/Tile/Tile.lua"
+Sprite:
+    rect:
+        x: 0
+        y: 0
+        width: 0.181818
+        height: 0.181818
+    transform: CameraTransform
+    zdepth: 1
+Script:
+    source: "self://Tile.lua"

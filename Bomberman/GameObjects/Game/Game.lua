@@ -1,7 +1,7 @@
 function makeTexture(name, path)
     local texture = Scene:createLevelSprite(name);
-    texture:setPosition(obe.UnitVector(2.4, 1));
-    texture:setSize(obe.UnitVector(1, 0.5));
+    texture:setPosition(obe.Transform.UnitVector(2.4, 1));
+    texture:setSize(obe.Transform.UnitVector(1, 0.5));
     texture:loadTexture(path);
     texture:setVisible(false);
     return texture;

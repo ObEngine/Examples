@@ -1,11 +1,12 @@
-Include (Obe);
+Sprite:
+    path: "Sprites/GameObjects/Bush/bush.png"
+    rect:
+        x: 0
+        y: 0
+        width: 0.181818
+        height: 0.181818
+    transform: CameraTransform
+    zdepth: 2
 
-Bush:
-    LevelSprite:
-        path:"Sprites/GameObjects/Bush/bush.png"
-        rect:Rect<SceneUnits>(0.0, 0.0, 0.181818, 0.181818)
-        xTransform:"Camera"
-        yTransform:"Camera"
-        z-depth:2
-    Script:
-        source:"Data/GameObjects/Bush/Bush.lua"
+Script:
+    source: "self://Bush.lua"

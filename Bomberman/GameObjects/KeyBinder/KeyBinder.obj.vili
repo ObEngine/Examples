@@ -1,4 +1,4 @@
-LevelSprite:
+Sprite:
     rect:
         x: 0
         y: 0

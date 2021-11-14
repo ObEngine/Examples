@@ -2,10 +2,10 @@ Object.Terrain = {};
 Object.TerrainElements = {};
 
 function inASpawnZone(x, y)
-    if not (x == 1 and y == 1) and not (x == 2 and y == 1) and not (x == 1 and y == 2)
-    and not (x == 11 and y == 9) and not (x == 10 and y == 9) and not (x == 11 and y == 8) 
-    and not (x == 11 and y == 1) and not (x == 10 and y == 1) and not (x == 11 and y == 2)
-    and not (x == 1 and y == 9) and not (x == 2 and y == 9) and not (x == 1 and y == 8) then
+    if not (x == 1 and y == 1) and not (x == 2 and y == 1) and not (x == 1 and y == 2) and
+        not (x == 11 and y == 9) and not (x == 10 and y == 9) and not (x == 11 and y == 8) and
+        not (x == 11 and y == 1) and not (x == 10 and y == 1) and not (x == 11 and y == 2) and
+        not (x == 1 and y == 9) and not (x == 2 and y == 9) and not (x == 1 and y == 8) then
         return false;
     else
         return true;
@@ -29,25 +29,30 @@ function Local.Init()
             else
                 terrainType = "Grass";
             end
-            local newTerrainElement = Scene:createGameObject("Tile", tostring(x) .. "-" .. tostring(y))({tileType = terrainType, solid = true});
-            local elementPosition = obe.UnitVector(
-                x * newTerrainElement.LevelSprite:getSize().x, 
-                y * newTerrainElement.LevelSprite:getSize().y
+            local newTerrainElement = Engine.Scene:createGameObject(
+                "Tile", tostring(x) .. "-" .. tostring(y)
+            )({tileType = terrainType, solid = true});
+            local elementPosition = obe.Transform.UnitVector(
+                x * newTerrainElement.Sprite:getSize().x, y * newTerrainElement.Sprite:getSize().y
             );
-            newTerrainElement.LevelSprite:setPosition(elementPosition, obe.Referential.TopLeft);
+            newTerrainElement.Sprite:setPosition(elementPosition, obe.Transform.Referential.TopLeft);
             if terrainType == "Grass" then
                 if (y % 2 == 0 and x % 2 ~= 0) and not inASpawnZone(x, y) and math.random(6) ~= 1 then
-                    local newBox = Scene:createGameObject("Box", tostring(x) .. "-" .. tostring(y) .. "-Box")();
-                    newBox.LevelSprite:setPosition(elementPosition, obe.Referential.TopLeft);
+                    local newBox = Engine.Scene:createGameObject(
+                        "Box", tostring(x) .. "-" .. tostring(y) .. "-Box"
+                    )();
+                    newBox.Sprite:setPosition(elementPosition, obe.Transform.Referential.TopLeft);
                     Object.TerrainElements[x + 1][y + 1] = newBox;
                     terrainType = "Box";
                 elseif not inASpawnZone(x, y) and math.random(6) ~= 1 then
-                    local newBush = Scene:createGameObject("Bush", tostring(x) .. "-" .. tostring(y) .. "-Bush")();
-                    newBush.LevelSprite:setPosition(elementPosition, obe.Referential.TopLeft);
+                    local newBush = Engine.Scene:createGameObject(
+                        "Bush", tostring(x) .. "-" .. tostring(y) .. "-Bush"
+                    )();
+                    newBush.Sprite:setPosition(elementPosition, obe.Transform.Referential.TopLeft);
                     Object.TerrainElements[x + 1][y + 1] = newBush;
                     terrainType = "Bush";
                 end
-                newTerrainElement.LevelSprite:setZDepth(3);
+                newTerrainElement.Sprite:setZDepth(3);
             end
             Object.Terrain[x + 1][y + 1] = terrainType;
         end

@@ -1,18 +1,18 @@
-Define Flag (Anim);
-Define Flag (Lock);
-
 Meta:
-    name:"Bomb"
-    clock:300
-    play-mode:"OneTime"
+    name: "Bomb"
+    clock: 300
+    mode: "OneTime"
+
 Images:
-    ImageList:[1..7]
-    model:"bomb_t%s.png"
+    images: [1, 2, 3, 4, 5, 6, 7]
+    model: "bomb_t%s.png"
+
 Groups:
     main:
-        content:[0..6]
+        content: [0..6]
+
 Animation:
-    AnimationCode:[
-        "PLAY_GROUP(main, 1)"
-        "CALL('Explosion')"
+    code: [
+        play_group { group: "main" },
+        set_animation { animation: "Explosion" }
     ]
