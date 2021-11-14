@@ -1,0 +1,15 @@
+Animator:
+    path: "Sprites/GameObjects/Bomb"
+
+Sprite:
+    rect:
+        x: 0
+        y: 0
+        width: 0.181818
+        height: 0.181818
+    transform: CameraTransform
+    zdepth: 2
+
+Script:
+    priority: 0
+    source: "self://Bomb.lua"

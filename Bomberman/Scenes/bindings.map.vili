@@ -1,0 +1,53 @@
+Meta:
+    name: "KeyBinder"
+
+View:
+    size: 1.0
+    position:
+        x: 0
+        y: 0
+
+Sprites:
+    background:
+        path: "Sprites/LevelSprites/home.png"
+        rect:
+            x: 0
+            y: 0
+            width: 1
+            height: 1
+            unit: "ViewPercentage"
+        rotation: 0.0
+        layer: 1
+        zdepth: 1
+        transform: CameraTransform
+
+GameObjects:
+    keybinder:
+        type: "KeyBinder"
+        Requires:
+            p1list: [
+                "P1_Up",
+                "P1_Down",
+                "P1_Left",
+                "P1_Right",
+                "P1_Bomb"
+            ]
+            p2list: [
+                "P2_Up",
+                "P2_Down",
+                "P2_Left",
+                "P2_Right",
+                "P2_Bomb"
+            ]
+            keyTypes:
+                P1_Up: "Hold"
+                P1_Down: "Hold"
+                P1_Left: "Hold"
+                P1_Right: "Hold"
+                P1_Bomb: "Pressed"
+                P2_Up: "Hold"
+                P2_Down: "Hold"
+                P2_Left: "Hold"
+                P2_Right: "Hold"
+                P2_Bomb: "Pressed"
+

@@ -1,0 +1,4 @@
+Script:
+    priority: 1
+    source: "self://Terrain.lua"
+

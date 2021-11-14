@@ -1,17 +1,17 @@
-Define Flag (Anim);
-Define Flag (Lock);
-
 Meta:
-    name:"Walk_Left"
-    clock:150
-    play-mode:"Loop"
+    name: "Walk_Left"
+    clock: 0.15
+    mode: "Loop"
+
 Images:
-    ImageList:["left_1", "left_2", "left_3"]
-    model:"%s.png"
+    images: ["left_1", "left_2", "left_3"]
+    model: "%s.png"
+
 Groups:
     main:
-        content:[0, 1, 2]
+        content: [0, 1, 2]
+
 Animation:
-    AnimationCode:[
-        "PLAY_GROUP(main, 1)"
+    code: [
+        play_group { group: "main" }
     ]

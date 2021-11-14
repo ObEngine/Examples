@@ -1,18 +1,18 @@
-Define Flag (Anim);
-Define Flag (Lock);
-
 Meta:
-    name:"Explosion"
-    clock:200
-    play-mode:"Loop"
+    name: "Explosion"
+    clock: 0.2
+    mode: "Loop"
+
 Images:
-    ImageList:[1..2]
-    model:"exp_start_%s.png"
+    images: [1, 2]
+    model: "exp_start_%s.png"
+
 Groups:
     main:
-        content:[0, 0, 1]
+        content: [0, 0, 1]
+
 Animation:
-    AnimationCode:[
-        "PLAY_GROUP(main, 1)"
-        "CALL('Propagate')"
+    code: [
+        play_group { group: "main" },
+        set_animation { animation: "Propagate" }
     ]

@@ -1,0 +1,11 @@
+Sprite:
+    rect:
+        x: 0
+        y: 0
+        width: 1
+        height: 1
+        unit: ViewPercentage
+    transform: CameraTransform
+    zdepth: 0
+Script:
+    source: "self://KeyBinder.lua"

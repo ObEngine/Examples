@@ -1,0 +1,12 @@
+Sprite:
+    path: "Sprites/GameObjects/Box/box.png"
+    rect:
+        x: 0
+        y: 0
+        width: 0.181818
+        height: 0.181818
+    transform: CameraTransform
+    zdepth: 2
+
+Script:
+    source: "self://Box.lua"

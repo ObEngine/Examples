@@ -1,16 +1,16 @@
-Define Flag (Anim);
-Define Flag (Lock);
-
 Meta:
-    name:"Propagate"
-    clock:1000
-    play-mode:"OneTime"
+    name: "Propagate"
+    clock: 1
+    mode: "OneTime"
+
 Images:
-    ImageList:["exp_center.png"]
+    images: ["exp_center.png"]
+
 Groups:
     main:
-        content:[0]
+        content: [0]
+
 Animation:
-    AnimationCode:[
-        "PLAY_GROUP(main, 1)"
+    code: [
+        play_group { group: "main" }
     ]

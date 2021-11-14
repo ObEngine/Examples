@@ -1,0 +1,10 @@
+Sprite:
+    rect:
+        x: 0
+        y: 0
+        width: 0.181818
+        height: 0.181818
+    transform: CameraTransform
+    zdepth: 1
+Script:
+    source: "self://Tile.lua"
