@@ -1,0 +1,3 @@
+Script:
+    source: "self://Game.lua"
+permanent: true

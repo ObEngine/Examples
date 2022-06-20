@@ -1,0 +1,15 @@
+Sprite:
+    path: "sprites://GameObjects/Barrel/Barrel.png"
+    rect:
+        x: 0.0
+        y: 0.0
+        width: 0.1
+        height: 0.1
+        unit: "SceneUnits"
+    transform:
+        x: "Camera"
+        y: "Camera"
+    layer: 1
+    sublayer: 1
+Script:
+    source: "self://Barrel.lua"

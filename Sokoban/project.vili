@@ -1,0 +1,13 @@
+id: "sokoban"
+name: "Sokoban"
+version: "0.1.0"
+authors: ["Irio", "Sygmei"]
+description: "A simple Sokoban game"
+obengine_version: "0.5.0"
+exclude: [".gitignore"]
+source: ""
+
+mounts:
+    scenes: "game://Scenes"
+    objects: "game://GameObjects"
+    sprites: "game://Sprites"

@@ -6,10 +6,3 @@ Input:
         DOWN: "Hold:S"
         Reset: "Pressed:R"
         Next: "Pressed:Return"
-
-Debug:
-    logLevel: info
-
-Window:
-    game:
-        fullscreen: false
