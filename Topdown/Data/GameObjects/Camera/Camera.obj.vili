@@ -1,3 +1,0 @@
-Camera:
-    Script:
-        source: "self://Camera.lua"

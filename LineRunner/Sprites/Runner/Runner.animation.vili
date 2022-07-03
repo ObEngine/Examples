@@ -1,0 +1,13 @@
+name: "Runner"
+framerate: 30
+mode: "OneTime"
+images: ["runner_1.png", "runner_2.png"]
+groups:
+    main: [0, 1]
+
+code: [
+    {
+        group: "main",
+        command: "PlayGroup"
+    }
+]

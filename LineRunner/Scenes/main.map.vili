@@ -1,0 +1,14 @@
+Meta:
+    name: "Main"
+
+View:
+    size: 1.0
+    position:
+        x: 0.0
+        y: 0.0
+        unit: "SceneUnits"
+    Referential: "TopLeft"
+
+GameObjects:
+    runner:
+        type: "Runner"

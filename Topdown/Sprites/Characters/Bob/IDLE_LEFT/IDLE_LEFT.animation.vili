@@ -1,0 +1,14 @@
+name: "IDLE_LEFT"
+framerate: 5
+mode: "Loop"
+images: ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"]
+groups:
+    main:
+        content: [0, 1, 2, 3, 4, 5]
+
+code: [
+    {
+        group: "main",
+        command: "PlayGroup"
+    }
+]

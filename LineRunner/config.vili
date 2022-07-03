@@ -1,0 +1,8 @@
+Input:
+    game:
+        UP: "Hold:Z"
+        LEFT: "Hold:Q"
+        RIGHT: "Hold:D"
+        DOWN: "Hold:S"
+        Reset: "Pressed:R"
+        Next: "Pressed:Return"

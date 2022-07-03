@@ -1,0 +1,14 @@
+id: "topdown"
+name: "Topdown"
+version: "0.1.0"
+authors: ["Sygmei"]
+description: "Topdown game template"
+obengine_version: "0.5.0"
+exclude: [".gitignore"]
+source: ""
+
+mounts:
+    scenes: "game://Scenes"
+    objects: "game://GameObjects"
+    tilesets: "game://Tilesets"
+    sprites: "game://Sprites"
